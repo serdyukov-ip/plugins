@@ -1,0 +1,26 @@
+docker ps
+docker ps -a
+
+docker image
+
+docker rm (id container)
+
+docker run -p 8080:80 --name db-mysql -u root -e MYSQL_ROOT_PASSWORD=pw1234 -d mysql
+
+// зайти в докер контейнер
+docker exec -it db-mysql /bin/bash 
+
+// внутри контейнера запускаем mysql (команда запросит ввести MYSQL_ROOT_PASSWORD указанный на этапе RUN)
+mysql -p
+
+// создадим базу данных
+create database db_first;
+
+// выход из mysql
+exit
+
+// выход из контейнера
+горячие клавиши ctrl+D
+
+// также в бд можно зайти одной командной
+docker exec -it db-mysql -uroot -p
